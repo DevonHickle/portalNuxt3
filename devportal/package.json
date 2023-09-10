@@ -13,6 +13,9 @@
     "nuxt": "^3.7.1"
   },
   "dependencies": {
-    "@nuxtjs/supabase": "^1.1.0"
+    "@mdi/font": "^7.2.96",
+    "@nuxtjs/supabase": "^1.1.0",
+    "sass": "^1.66.1",
+    "vuetify": "^3.4.0-alpha.1"
   }
 }
