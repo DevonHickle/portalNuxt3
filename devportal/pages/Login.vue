@@ -1,19 +1,21 @@
 <template>
-  <section class="section">
+  <section class="d-flex align-center justify-center" style="height: 100vh">
     <div class="container">
       <div class="columns">
-        <div class="column is-4 is-offset-4">
-          <h2 class="text-centered">Sign In To DevDevPortal</h2>
+        <div class="column">
+          <h2 class="d-flex">DevDevPortal</h2>
 
           <Notification :message="error" v-if="error" />
 
-          <form @submit.prevent="login">
+          <v-form @submit.prevent="login">
             <div class="field">
-              <label class="label"
-                >Sign in via Magic Link with your email below:</label
-              >
+              <label class="label mt-1"
+                >Sign in via Magic Link with your email below:
+            </label>
               <div class="control">
-                <input
+                <v-text-field
+                  variant="outlined"
+                  label="Email"
                   type="email"
                   class="input"
                   name="email"
@@ -23,14 +25,16 @@
               </div>
             </div>
             <div class="control">
-              <input
+              <v-btn
                 type="submit"
-                class="button block"
-                :value="loading ? 'Loading' : 'Send Magic Link'"
+                class="mt-2"
+                block rounded
+                color="primary"
+                :text="loading ? 'Loading' : 'Send Magic Link'"
                 :disabled="loading"
               />
             </div>
-          </form>
+          </v-form>
         </div>
       </div>
     </div>
@@ -38,6 +42,8 @@
 </template>
 
 <script setup lang="js">
+import Notification from '~/components/Notification.vue';
+
 const supabase = useSupabaseClient();
 const loading = ref(false);
 const email = ref("");
