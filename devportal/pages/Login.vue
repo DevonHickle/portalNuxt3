@@ -14,7 +14,7 @@
             </label>
               <div class="control">
                 <v-text-field
-                  variant="outlined"
+                  variant="underlined"
                   label="Email"
                   type="email"
                   class="input"
